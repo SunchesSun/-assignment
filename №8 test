@@ -1,0 +1,11 @@
+from itertools import product
+
+s = ["Д", "О", "Р", "А", "У"]  # создаем массив со всеми буквами
+sogl = "ДР"  # строка для согласных
+glas = "ОАУ"  # стрка для гласных
+k = 0
+for i in product(s, repeat=8):  # перебираем ВСЕ возможные варианты 8-буквенных слов
+    x = ''.join(i)  # переводим в строку для удобства
+    if (x[1] not in sogl) and (x[3] not in sogl) and (x[6] not in glas) and (x[4] not in glas) and (x.count("У") >= 1):
+        k += 1
+print(k)
